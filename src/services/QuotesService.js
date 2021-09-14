@@ -1,4 +1,5 @@
-import { getRandomQuoteFailure, getRandomQuoteRequest, getRandomQuoteSuccess } from "./Actions/quoteActions"
+import axios from "axios"
+import { getRandomQuoteFailure, getRandomQuoteRequest, getRandomQuoteSuccess } from "../Redux/Quotes/Actions/quoteActions"
 
 const fetchQuotes = () => {
     return function (dispatch) {
@@ -13,3 +14,5 @@ const fetchQuotes = () => {
             })
     }
 }
+
+export default fetchQuotes
