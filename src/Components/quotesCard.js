@@ -6,12 +6,14 @@ import fetchQuotes from "../services/QuotesService"
 const QuotesCard = (props) => {
     return (
         <div id="quote-box">
-        {props.text?
-            <h1>{props.text}</h1>
-            :<h2>{props.error}</h2>}
+        {!props.text?
+        <h2>Press the buton, get inspiration...</h2>
+        :props.text?
+            <h1>"{props.text}"</h1>
+            :<h2>"{props.error}"</h2>}
             <p id="text"><strong>{props.author}</strong></p>
             <span id="author"></span>
-            <button onClick={props.getQuote} id="new-quote">new-quote</button>
+            <button onClick={props.getQuote} id="new-quote">Get a new quote 👈🏾</button>
             <a href="twitter.com/intent/tweet" target="_blank" id="tweet-quote">Tweet it</a>
         </div>
     )

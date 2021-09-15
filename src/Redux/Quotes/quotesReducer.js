@@ -5,8 +5,8 @@ import { GET_QUOTE_FAILURE, GET_QUOTE_REQUEST, GET_QUOTE_SUCCESS } from "./Actio
 const initialState = {
     loading: false,
     quote: {
-        text:'',
-        author:''
+        text: '',
+        author: ''
     },
     error: ''
 }
