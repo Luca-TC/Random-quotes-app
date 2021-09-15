@@ -6,8 +6,10 @@ import fetchQuotes from "../services/QuotesService"
 const QuotesCard = (props) => {
     return (
         <div id="quote-box">
-            <h1>Sono una macchina inutile</h1>
-            <p id="text"><strong>NON È VERO</strong></p>
+        {props.text?
+            <h1>{props.text}</h1>
+            :<h2>{props.error}</h2>}
+            <p id="text"><strong>{props.author}</strong></p>
             <span id="author"></span>
             <button onClick={props.getQuote} id="new-quote">new-quote</button>
             <a href="twitter.com/intent/tweet" target="_blank" id="tweet-quote">Tweet it</a>
@@ -16,9 +18,11 @@ const QuotesCard = (props) => {
 }
 
 const mapStateToProps = state => {
+    console.log('-----',state.quote)
     return {
-        text: state.quote.text,
-        author: state.quote.author
+        text: state.quote.content,
+        author: state.quote.author,
+        error: state.error
     }
 }
 

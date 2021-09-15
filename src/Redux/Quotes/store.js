@@ -1,6 +1,8 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import thunk from 'redux-thunk'
+
 import { quotesReducer } from './quotesReducer'
-const store = createStore(quotesReducer)
+const store = createStore(quotesReducer ,applyMiddleware(thunk))
 
 
 export default store

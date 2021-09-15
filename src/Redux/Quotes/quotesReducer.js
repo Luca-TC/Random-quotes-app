@@ -19,7 +19,6 @@ export const quotesReducer = (state = initialState, action) => {
                 ...state,
                 loading: true
             }
-            break
         case GET_QUOTE_SUCCESS:
             return {
                 loading: false,
@@ -34,10 +33,8 @@ export const quotesReducer = (state = initialState, action) => {
             }
         default:
             return state
-            break
     }
 }
-
 
 
 

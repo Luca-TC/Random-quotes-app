@@ -4,7 +4,7 @@ import { getRandomQuoteFailure, getRandomQuoteRequest, getRandomQuoteSuccess } f
 const fetchQuotes = () => {
     return function (dispatch) {
         dispatch(getRandomQuoteRequest())
-        axios.get('https://api.quotable.io/random')
+        axios.get('https://api.quotable.io/randm')
             .then(res => {
                 const quote = res.data
                 dispatch(getRandomQuoteSuccess(quote))
